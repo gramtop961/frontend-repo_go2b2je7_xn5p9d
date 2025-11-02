@@ -1,26 +1,32 @@
-import { useState } from 'react'
+import Header from './components/Header'
+import SOSPanel from './components/SOSPanel'
+import RegistrationForm from './components/RegistrationForm'
+import HowItWorks from './components/HowItWorks'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-gradient-to-b from-rose-50 via-white to-blue-50 text-gray-900">
+      <Header />
+
+      <main className="max-w-6xl mx-auto px-4 py-10 md:py-14 space-y-10 md:space-y-12">
+        <div className="text-center max-w-3xl mx-auto">
+          <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight">
+            Feel safer with instant SOS
+          </h1>
+          <p className="mt-3 text-gray-600">
+            A simple safety app for women: tap once to share your live location with your trusted
+            contact and the nearest police desk. Fast, discreet, and built for real moments.
+          </p>
         </div>
-      </div>
+
+        <SOSPanel />
+        <RegistrationForm />
+        <HowItWorks />
+
+        <p className="text-center text-xs text-gray-500">
+          This web demo showcases the flow. Power button triple-press is available in the native app.
+        </p>
+      </main>
     </div>
   )
 }
